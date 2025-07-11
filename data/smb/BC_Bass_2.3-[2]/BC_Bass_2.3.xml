@@ -1,0 +1,4502 @@
+<?xml version="1.0"?>
+<scenario>
+  <population>
+    <name>Bass</name>
+    <description />
+    <type>aquatic</type>
+    <accumulators>
+      <accumulator name="1 Constant" lowerBound="1" upperBound="1" birthLower="1" birthUpper="1" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Age [ months ]" lowerBound="12" upperBound="84" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Births" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Consumption Marker" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Density [ bass ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Dispersal Distance" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Dispersal Marker" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Distance Moved [ annual ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Distance Moved [ month ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Downstream Factor" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Fecundity" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Fecundity_sd" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Growing Degree Days" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Individuals [ adults ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Predator Density of Crayfish" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Reach Area" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Reach ID" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="True">
+        <description />
+      </accumulator>
+      <accumulator name="Spawned Marker" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Stream Width" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Survival [ max age ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Temperature" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="True">
+        <description />
+      </accumulator>
+      <accumulator name="Temporary Age Class Marker" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Timestep" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="True">
+        <description />
+      </accumulator>
+      <accumulator name="Upstream Factor" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+    </accumulators>
+    <traits>
+      <accumulatedTrait name="Age Class [ by grp ]" accumulator="Age [ months ]">
+        <value name="YoY 0" threshold="-INF" />
+        <value name="Juvenile 1-2" threshold="12" />
+        <value name="Adult 3-6" threshold="36" />
+        <description />
+      </accumulatedTrait>
+      <accumulatedTrait name="Age Class [ by yr ]" accumulator="Age [ months ]">
+        <value name="YoY0" threshold="-INF" />
+        <value name="YoY1" threshold="1" />
+        <value name="YoY2to11" threshold="2" />
+        <value name="Juvenile1" threshold="12" />
+        <value name="Juvenile2" threshold="24" />
+        <value name="Adult3" threshold="36" />
+        <value name="Adult4" threshold="48" />
+        <value name="Adult5" threshold="60" />
+        <value name="Adult6" threshold="72" />
+        <description />
+      </accumulatedTrait>
+      <accumulatedTrait name="Age Class [ predation ]" accumulator="Age [ months ]">
+        <value name="Age 0 - 2" threshold="-INF" />
+        <value name="Age 3 - 6" threshold="36" />
+        <description />
+      </accumulatedTrait>
+      <accumulatedTrait name="Age Class [ yoy ]" accumulator="Age [ months ]">
+        <value name="Age 0-0" threshold="-INF" />
+        <value name="Age 0-1" threshold="1" />
+        <value name="Age 0-2" threshold="2" />
+        <value name="Age 0-3+" threshold="3" />
+        <value name="Non-YoY" threshold="12" />
+        <description />
+      </accumulatedTrait>
+      <probabilisticTrait name="Crayfish Consumption Class">
+        <value name="Does Not Consume Crayfish" init="100" birth="100" />
+        <value name="Light Consumption of Crayfish" init="0" birth="0" />
+        <value name="Moderate Consumption of Crayfish" init="0" birth="0" />
+        <value name="Heavy Consumption of Crayfish" init="0" birth="0" />
+        <value name="Extreme Consumption of Crayfish" init="0" birth="0" />
+        <description />
+      </probabilisticTrait>
+      <accumulatedTrait name="Cumulative GDD" accumulator="Growing Degree Days">
+        <value name="Too few GDD" threshold="-INF" />
+        <value name="Sufficient GDD" threshold="897" />
+        <description />
+      </accumulatedTrait>
+      <accumulatedTrait name="Data Recorder" accumulator="1 Constant">
+        <value name="None" threshold="-INF" />
+        <value name="All Individuals" threshold="1" />
+        <description />
+      </accumulatedTrait>
+      <probabilisticTrait name="Dispersal Range">
+        <value name="0km" init="100" birth="100" />
+        <value name="1-5km" init="0" birth="0" />
+        <value name="5-20km" init="0" birth="0" />
+        <value name="20-40km" init="0" birth="0" />
+        <value name="40-109km" init="0" birth="0" />
+        <description />
+      </probabilisticTrait>
+      <probabilisticTrait name="No Reproduction Tracker">
+        <value name="Null" init="100" birth="100" />
+        <value name="Too Young" init="0" birth="0" />
+        <value name="Too Cold" init="0" birth="0" />
+        <value name="Too Hot" init="0" birth="0" />
+        <value name="Already spawned this year" init="0" birth="0" />
+        <value name="Should spawn this year" init="0" birth="0" />
+        <description />
+      </probabilisticTrait>
+      <accumulatedTrait name="Predator Density of Crayfish [ adults ]" accumulator="Predator Density of Crayfish">
+        <value name="0-5 crayfish" threshold="-INF" />
+        <value name="5-10 crayfish" threshold="5" />
+        <value name="10-15 crayfish" threshold="10" />
+        <value name="15-20 crayfish" threshold="15" />
+        <value name="20-25 crayfish" threshold="20" />
+        <value name="25 and more crayfish" threshold="25" />
+        <description />
+      </accumulatedTrait>
+      <accumulatedTrait name="Seasonal Spawning History" accumulator="Births">
+        <value name="Did not spawn this month" threshold="-INF" />
+        <value name="Spawned this month" threshold="1" />
+        <description />
+      </accumulatedTrait>
+      <probabilisticTrait name="Spawning Eligibility">
+        <value name="Not Eligible to Spawn" init="100" birth="100" />
+        <value name="Is Eligible to Spawn" init="0" birth="0" />
+        <description />
+      </probabilisticTrait>
+      <probabilisticTrait name="Spawning History">
+        <value name="Has Not Spawned this year" init="100" birth="100" />
+        <value name="Already Spawned this year" init="0" birth="0" />
+        <description />
+      </probabilisticTrait>
+      <accumulatedTrait name="Stream Width" accumulator="Stream Width">
+        <value name="Narrow" threshold="-INF" />
+        <value name="Moderate" threshold="5.1" />
+        <value name="Wide" threshold="30.1" />
+        <description />
+      </accumulatedTrait>
+      <accumulatedTrait name="Temperature Eligibility [ Spawning ]" accumulator="Temperature">
+        <value name="Too Cold To Spawn ( below 15C )" threshold="-INF" />
+        <value name="Within Range To Spawn ( above 15C)" threshold="15" />
+        <value name="Too Hot ( above 26 C )" threshold="26" />
+        <description />
+      </accumulatedTrait>
+      <accumulatedTrait name="Temperature [ bass predation on crayfish ]" accumulator="Temperature">
+        <value name="No Predation [0-5]" threshold="-INF" />
+        <value name="Predation [5-10]" threshold="5" />
+        <value name="Predation [10-15]" threshold="10" />
+        <value name="Predation [15-20]" threshold="15" />
+        <value name="Predation [20-25]" threshold="20" />
+        <value name="Predation [25-30]" threshold="25" />
+        <value name="Predation [30-35]" threshold="30" />
+        <value name="Predation [35+]" threshold="35" />
+        <description />
+      </accumulatedTrait>
+      <accumulatedTrait name="Temperature [ cray predation on bass ]" accumulator="Temperature">
+        <value name="No Crayfish Predation on Bass" threshold="-INF" />
+        <value name="Crayfish Can Predate on Bass" threshold="6" />
+        <description />
+      </accumulatedTrait>
+      <accumulatedTrait name="Temperature [ survival ]" accumulator="Temperature">
+        <value name="0" threshold="-INF" />
+        <value name="1" threshold="1" />
+        <value name="2" threshold="2" />
+        <value name="3" threshold="3" />
+        <value name="4" threshold="4" />
+        <value name="5" threshold="5" />
+        <value name="6" threshold="6" />
+        <value name="7" threshold="7" />
+        <value name="8" threshold="8" />
+        <value name="9" threshold="9" />
+        <value name="10" threshold="10" />
+        <value name="11" threshold="11" />
+        <value name="12" threshold="12" />
+        <value name="13" threshold="13" />
+        <value name="14" threshold="14" />
+        <value name="15" threshold="15" />
+        <value name="16" threshold="16" />
+        <value name="17" threshold="17" />
+        <value name="18" threshold="18" />
+        <value name="19" threshold="19" />
+        <value name="20" threshold="20" />
+        <value name="21" threshold="21" />
+        <value name="22" threshold="22" />
+        <value name="23" threshold="23" />
+        <value name="24" threshold="24" />
+        <value name="25" threshold="25" />
+        <value name="26" threshold="26" />
+        <value name="27" threshold="27" />
+        <value name="28" threshold="28" />
+        <value name="29" threshold="29" />
+        <value name="30" threshold="30" />
+        <description />
+      </accumulatedTrait>
+    </traits>
+    <initialSize>15773</initialSize>
+    <networkInitType>reachProperty</networkInitType>
+    <networkInitializationProperty>bass_pres</networkInitializationProperty>
+    <networkPropertyMin>1</networkPropertyMin>
+    <networkPropertyMax>1</networkPropertyMax>
+    <initializationSpatialData />
+    <rangeSuitabilitySpatialData>johndayriver</rangeSuitabilitySpatialData>
+    <displayColor>-1</displayColor>
+  </population>
+  <population>
+    <name>Crayfish</name>
+    <description />
+    <type>aquatic</type>
+    <accumulators>
+      <accumulator name="1 Constant" lowerBound="1" upperBound="1" birthLower="1" birthUpper="1" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Age [ months ]" lowerBound="12" upperBound="35" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Births" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Death by Predation [ this month ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Density [ cray ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Dispersal Distance" lowerBound="2160" upperBound="2160" birthLower="2160" birthUpper="2160" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Distance Moved [ annual ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Distance Moved [ month ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Downstream Factor" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Fecundity" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Fecundity_density" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Fecundity_sd" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Fecundity_sd_density" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Individuals [ adults ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Number of Adults [ per reach ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Reach ID" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="True">
+        <description />
+      </accumulator>
+      <accumulator name="Survival [ max age ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Survival [ predation ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Survival [ temp ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Temperature" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="True">
+        <description />
+      </accumulator>
+      <accumulator name="Temporary Age Class Marker" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Timestep" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="True">
+        <description />
+      </accumulator>
+      <accumulator name="Upstream Factor" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+    </accumulators>
+    <traits>
+      <accumulatedTrait name="Age Class" accumulator="Age [ months ]">
+        <value name="Juveniles" threshold="-INF" />
+        <value name="Adult yr 1" threshold="12" />
+        <value name="Adult yr 2" threshold="24" />
+        <value name="Adult yr 3" threshold="36" />
+        <description />
+      </accumulatedTrait>
+      <accumulatedTrait name="Age [ months ]" accumulator="Age [ months ]">
+        <value name="Age [ months ] 0" threshold="-INF" />
+        <value name="Age [ months ] 1" threshold="1" />
+        <value name="Age [ months ] 2" threshold="2" />
+        <value name="Age [ months ] 3" threshold="3" />
+        <value name="Age [ months ] 4" threshold="4" />
+        <value name="Age [ months ] 5" threshold="5" />
+        <value name="Age [ months ] 6" threshold="6" />
+        <value name="Age [ months ] 7" threshold="7" />
+        <value name="Age [ months ] 8" threshold="8" />
+        <value name="Age [ months ] 9" threshold="9" />
+        <value name="Age [ months ] 10" threshold="10" />
+        <value name="Age [ months ] 11" threshold="11" />
+        <value name="Age [ months ] 12" threshold="12" />
+        <value name="Age [ months ] 13" threshold="13" />
+        <value name="Age [ months ] 14" threshold="14" />
+        <value name="Age [ months ] 15" threshold="15" />
+        <value name="Age [ months ] 16" threshold="16" />
+        <value name="Age [ months ] 17" threshold="17" />
+        <value name="Age [ months ] 18" threshold="18" />
+        <value name="Age [ months ] 19" threshold="19" />
+        <value name="Age [ months ] 20" threshold="20" />
+        <value name="Age [ months ] 21" threshold="21" />
+        <value name="Age [ months ] 22" threshold="22" />
+        <value name="Age [ months ] 23" threshold="23" />
+        <value name="Age [ months ] 24" threshold="24" />
+        <value name="Age [ months ] 25" threshold="25" />
+        <value name="Age [ months ] 26" threshold="26" />
+        <value name="Age [ months ] 27" threshold="27" />
+        <value name="Age [ months ] 28" threshold="28" />
+        <value name="Age [ months ] 29" threshold="29" />
+        <value name="Age [ months ] 30" threshold="30" />
+        <value name="Age [ months ] 31" threshold="31" />
+        <value name="Age [ months ] 32" threshold="32" />
+        <value name="Age [ months ] 33" threshold="33" />
+        <value name="Age [ months ] 34" threshold="34" />
+        <value name="Age [ months ] 35" threshold="35" />
+        <value name="Age [ months ] 36+" threshold="36" />
+        <description />
+      </accumulatedTrait>
+      <accumulatedTrait name="Data Recorder" accumulator="1 Constant">
+        <value name="No Individuals" threshold="-INF" />
+        <value name="All Individuals" threshold="1" />
+        <description />
+      </accumulatedTrait>
+      <probabilisticTrait name="Dispersal Range">
+        <value name="0m" init="100" birth="100" />
+        <value name="500" init="0" birth="0" />
+        <value name="1000m" init="0" birth="0" />
+        <value name="1500m" init="0" birth="0" />
+        <value name="2000m" init="0" birth="0" />
+        <value name="2500m" init="0" birth="0" />
+        <value name="3000m" init="0" birth="0" />
+        <value name="3500m" init="0" birth="0" />
+        <value name="4000m" init="0" birth="0" />
+        <value name="4500m" init="0" birth="0" />
+        <value name="5000m" init="0" birth="0" />
+        <value name="5500m" init="0" birth="0" />
+        <value name="6000m" init="0" birth="0" />
+        <value name="6500m" init="0" birth="0" />
+        <value name="7000m" init="0" birth="0" />
+        <value name="7500m" init="0" birth="0" />
+        <value name="8000m" init="0" birth="0" />
+        <description />
+      </probabilisticTrait>
+      <probabilisticTrait name="No Reproduction Tracker">
+        <value name="Null" init="100" birth="100" />
+        <value name="Immature and Cold" init="0" birth="0" />
+        <value name="Immature and Hot" init="0" birth="0" />
+        <value name="Immature and Ideal" init="0" birth="0" />
+        <value name="Mature and Cold" init="0" birth="0" />
+        <value name="Mature and Hot" init="0" birth="0" />
+        <value name="Mature and Ideal" init="0" birth="0" />
+        <description />
+      </probabilisticTrait>
+      <accumulatedTrait name="Predation Outcome" accumulator="Death by Predation [ this month ]">
+        <value name="Will Not Die by Preadtion This Month" threshold="-INF" />
+        <value name="Will Die by Preadtion This Month" threshold="1" />
+        <description />
+      </accumulatedTrait>
+      <probabilisticTrait name="Spawning Eligibility">
+        <value name="Not Eligible to Spawn" init="100" birth="100" />
+        <value name="Is Eligible to Spawn" init="0" birth="0" />
+        <description />
+      </probabilisticTrait>
+      <probabilisticTrait name="Spawning Status">
+        <value name="Immature" init="100" birth="100" />
+        <value name="Mature" init="0" birth="0" />
+        <description />
+      </probabilisticTrait>
+      <accumulatedTrait name="Spawning Temperature Threshold" accumulator="Temperature">
+        <value name="Too cold to spawn" threshold="-INF" />
+        <value name="Within range to spawn" threshold="8" />
+        <value name="Too hot to spawn" threshold="35" />
+        <description />
+      </accumulatedTrait>
+      <accumulatedTrait name="Temperature [ survival ]" accumulator="Temperature">
+        <value name="0" threshold="-INF" />
+        <value name="1" threshold="1" />
+        <value name="2" threshold="2" />
+        <value name="3" threshold="3" />
+        <value name="4" threshold="4" />
+        <value name="5" threshold="5" />
+        <value name="6" threshold="6" />
+        <value name="7" threshold="7" />
+        <value name="8" threshold="8" />
+        <value name="9" threshold="9" />
+        <value name="10" threshold="10" />
+        <value name="11" threshold="11" />
+        <value name="12" threshold="12" />
+        <value name="13" threshold="13" />
+        <value name="14" threshold="14" />
+        <value name="15" threshold="15" />
+        <value name="16" threshold="16" />
+        <value name="17" threshold="17" />
+        <value name="18" threshold="18" />
+        <value name="19" threshold="19" />
+        <value name="20" threshold="20" />
+        <value name="21" threshold="21" />
+        <value name="22" threshold="22" />
+        <value name="23" threshold="23" />
+        <value name="24" threshold="24" />
+        <value name="25" threshold="25" />
+        <value name="26" threshold="26" />
+        <value name="27" threshold="27" />
+        <value name="28" threshold="28" />
+        <value name="29" threshold="29" />
+        <value name="30" threshold="30" />
+        <value name="31" threshold="31" />
+        <value name="32" threshold="32" />
+        <value name="33" threshold="33" />
+        <value name="34" threshold="34" />
+        <value name="35" threshold="35" />
+        <value name="36" threshold="36" />
+        <value name="37" threshold="37" />
+        <description />
+      </accumulatedTrait>
+    </traits>
+    <initialSize>0</initialSize>
+    <networkInitType>reachProperty</networkInitType>
+    <networkInitializationProperty>reachID</networkInitializationProperty>
+    <networkPropertyMin>1731</networkPropertyMin>
+    <networkPropertyMax>1732</networkPropertyMax>
+    <initializationSpatialData />
+    <rangeSuitabilitySpatialData>johndayriver</rangeSuitabilitySpatialData>
+  </population>
+  <population>
+    <name>Segment Manager</name>
+    <description />
+    <type>aquatic</type>
+    <accumulators>
+      <accumulator name="Density [ bass ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Density [ cray ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Number Adult 3 Bass" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Number Adult 4 Bass" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Number Adult Older Bass" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Number Age 1 Crayfish" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Number Age 2 Crayfish" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Number Age 3 Crayfish" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Number Cray Prey [ extreme consumers ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Number Cray Prey [ heavy consumers ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Number Cray Prey [ light consumers ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Number Cray Prey [ moderate consumers ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Number Juvenile Bass" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Number Juvenile Crayfish" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Number of Dispersers [ bass ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Number of Dispersers [ cray ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Number YoY Bass" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Occupancy [ extreme consumers ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Occupancy [ heavy consumers ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Occupancy [ light consumers ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Occupancy [ moderate consumers ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Occupants [ bass ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Occupants [ cray ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Reach Area" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Reach ID" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Resistance [ reach ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Temp [ bass proportion ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Temp [ cray proportion ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+      <accumulator name="Temperature [ actual ]" lowerBound="0" upperBound="0" birthLower="0" birthUpper="0" holdsId="False" inherit="False">
+        <description />
+      </accumulator>
+    </accumulators>
+    <traits>
+      <accumulatedTrait name="Bass Presence" accumulator="Occupants [ bass ]">
+        <value name="No Bass in Segment" threshold="-INF" />
+        <value name="Bass Present in Segment" threshold="1" />
+        <description />
+      </accumulatedTrait>
+      <accumulatedTrait name="Crayfish Presence" accumulator="Occupants [ cray ]">
+        <value name="No Crayfish in Segment" threshold="-INF" />
+        <value name="Crayfish Present in Segment" threshold="1" />
+        <description />
+      </accumulatedTrait>
+      <probabilisticTrait name="Dummy">
+        <value name="No" init="100" birth="100" />
+        <value name="Yes" init="0" birth="0" />
+        <description />
+      </probabilisticTrait>
+      <probabilisticTrait name="Species Presence">
+        <value name="Neither Species Present" init="100" birth="100" />
+        <value name="Crayfish Only Present" init="0" birth="0" />
+        <value name="Bass Only Present" init="0" birth="0" />
+        <value name="Crayfish and Bass Present" init="0" birth="0" />
+        <description />
+      </probabilisticTrait>
+    </traits>
+    <initialSize>0</initialSize>
+    <networkInitType>onePerReach</networkInitType>
+    <networkInitializationProperty />
+    <networkPropertyMin>0</networkPropertyMin>
+    <networkPropertyMax>0</networkPropertyMax>
+    <initializationSpatialData />
+    <rangeSuitabilitySpatialData>johndayriver</rangeSuitabilitySpatialData>
+  </population>
+  <event>
+    <eventGroupEvent>
+      <name>Begin Month [ bass ]</name>
+      <description />
+      <qualifiedName>Event Group ( Begin Month [ bass ] )</qualifiedName>
+      <displayColor>-128</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <accumulateEvent>
+          <name>Get Bass Reach Info [ manager ]</name>
+          <description />
+          <qualifiedName>Accumulate ( Get Bass Reach Info [ manager ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Segment Manager</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Reach ID</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>reachID</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Temperature [ actual ]</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>MeanT</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Temp [ bass proportion ]</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>BassT</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Get Reach Info [ bass ]</name>
+          <description />
+          <qualifiedName>Accumulate ( Get Reach Info [ bass ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Reach ID</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>reachID</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Timestep</accumulator>
+            <function>HexSimDomain.TimeStepUpdaterFunction</function>
+            <parameter>0</parameter>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event eventOff="True">
+    <eventGroupEvent>
+      <name>Begin Month [ crayfish ]</name>
+      <description />
+      <qualifiedName>Event Group ( Begin Month [ crayfish ] )</qualifiedName>
+      <displayColor>-2757889</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <accumulateEvent>
+          <name>Get Cray Reach Info [ manager ]</name>
+          <description />
+          <qualifiedName>Accumulate ( Get Cray Reach Info [ manager ] )</qualifiedName>
+          <populationName>Segment Manager</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Reach ID</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>reachID</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Temperature [ actual ]</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>MeanT</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Temp [ cray proportion ]</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>CrayT</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Get Reach Info [ cray ]</name>
+          <description />
+          <qualifiedName>Accumulate ( Get Reach Info [ cray ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Reach ID</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>reachID</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Timestep</accumulator>
+            <function>HexSimDomain.TimeStepUpdaterFunction</function>
+            <parameter>0</parameter>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event>
+    <eventGroupEvent>
+      <name>Movement [ bass ]</name>
+      <description />
+      <qualifiedName>Event Group ( Movement [ bass ] )</qualifiedName>
+      <displayColor>-128</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Calculate Upstream Factor</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Calculate Upstream Factor )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Upstream Factor [ bass ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>h1*h2</expression>
+            <streamPropName>johndayriver:property:BassT</streamPropName>
+            <streamPropName>johndayriver:property:bass_upst_</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Calculate Downstream Factor</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Calculate Downstream Factor )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Downstream Factor [ bass ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>h1</expression>
+            <streamPropName>johndayriver:property:BassT</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Set Up Dispersal</name>
+          <description />
+          <qualifiedName>Accumulate ( Set Up Dispersal )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Temperature</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>BassT</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Upstream Factor</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Upstream Factor [ bass ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Downstream Factor</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Downstream Factor [ bass ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <transitionEvent>
+          <name>Assign Dispersal Range</name>
+          <description />
+          <qualifiedName>Transition ( Assign Dispersal Range )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <transitionTrait>Dispersal Range</transitionTrait>
+          <trait>Age Class [ by grp ]</trait>
+          <matrixSet transposed="false" rowsReversed="false">
+            <matrixCount>1</matrixCount>
+            <rows>3</rows>
+            <columns>5</columns>
+            <matrices>
+1 0 0 0 0
+0.25 0.16 0.24 0.15 0.2
+0.25 0.16 0.24 0.15 0.2
+</matrices>
+          </matrixSet>
+        </transitionEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Assign Dispersal Distance</name>
+          <description />
+          <qualifiedName>Accumulate ( Assign Dispersal Distance )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Distance Moved [ month ]</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Dispersal Distance</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <!--Stratified Updater Functions Group 0-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>1 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>0 + (167 - 0 ) * Rand( ) </parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 1-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 1 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>167 + (833 - 167) * Rand( ) </parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 2-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 0 1 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>833 + (3333 - 833) * Rand( ) </parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 3-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 0 0 1 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>3333 + (6666 - 3333 ) * Rand( ) </parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 4-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 0 0 0 1</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>6666 + (18167 - 6666) * Rand( ) </parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+        </accumulateEvent>
+      </event>
+      <event>
+        <networkMoveEvent>
+          <name>Dispersers Move</name>
+          <description />
+          <qualifiedName>Network Movement ( Dispersers Move )</qualifiedName>
+          <displayColor>-4144960</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <logParams logNetworkMove="true" />
+          <trait>Age Class [ by grp ]</trait>
+          <traitCombinations>0 1 1</traitCombinations>
+          <direction>either</direction>
+          <applyStoppingConditions>true</applyStoppingConditions>
+          <segmentLengthProperty>shape_leng</segmentLengthProperty>
+          <upStreamScaleProperty>Upstream Factor [ bass ]</upStreamScaleProperty>
+          <downStreamScaleProperty>Downstream Factor [ bass ]</downStreamScaleProperty>
+          <seekSegment />
+          <seekDirection />
+          <distanceToMove>Dispersal Distance</distanceToMove>
+          <distanceMoved>Distance Moved [ month ]</distanceMoved>
+          <stoppedOnConditions />
+          <stoppingConditionSet>
+            <boundedStoppingCondition>
+              <propertyName>BassT</propertyName>
+              <lowerBound>0</lowerBound>
+              <upperBound>0</upperBound>
+            </boundedStoppingCondition>
+            <probability>1</probability>
+          </stoppingConditionSet>
+          <branchingConditionSet>
+            <boundedBranchingCondition>
+              <propertyName>BassT</propertyName>
+              <lowerBound>1</lowerBound>
+              <upperBound>1</upperBound>
+            </boundedBranchingCondition>
+            <probability>0.8</probability>
+          </branchingConditionSet>
+        </networkMoveEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Update Destination Temp</name>
+          <description />
+          <qualifiedName>Accumulate ( Update Destination Temp )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Temperature</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>MeanT</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Reach ID</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>reachID</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Update Distance Moved</name>
+          <description />
+          <qualifiedName>Accumulate ( Update Distance Moved )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Distance Moved [ month ]</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>"Distance Moved [ month ]"</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Distance Moved [ month ]</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>Floor("Distance Moved [ month ]" + 0.5)</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Distance Moved [ annual ]</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>"Distance Moved [ annual ]" + "Distance Moved [ month ]"</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event eventOff="True">
+        <dataProbeEvent>
+          <name>Record Movement Data [ bass ]</name>
+          <description />
+          <qualifiedName>Data Probe ( Record Movement Data [ bass ] )</qualifiedName>
+          <displayColor>-8323200</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <trait>Data Recorder</trait>
+          <traitCombinations>0 1</traitCombinations>
+          <accumulator>Reach ID</accumulator>
+          <accumulator>Temperature</accumulator>
+          <accumulator>Upstream Factor</accumulator>
+          <accumulator>Downstream Factor</accumulator>
+          <accumulator>Dispersal Marker</accumulator>
+          <accumulator>Dispersal Distance</accumulator>
+          <accumulator>Distance Moved [ month ]</accumulator>
+          <accumulator>Distance Moved [ annual ]</accumulator>
+        </dataProbeEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event>
+    <eventGroupEvent>
+      <name>Update Density Estimates [ bass ]</name>
+      <description />
+      <qualifiedName>Event Group ( Update Density Estimates [ bass ] )</qualifiedName>
+      <displayColor>-58</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <accumulateEvent>
+          <name>Update Super-Individual Count</name>
+          <description />
+          <qualifiedName>Accumulate ( Update Super-Individual Count )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Individuals [ adults ]</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>Cond("Age [ months ]" -13, 2, 0)</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Update Occupancy Count</name>
+          <description />
+          <qualifiedName>Accumulate ( Update Occupancy Count )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Segment Manager</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Occupants [ bass ]</accumulator>
+            <sourcePopulation>Bass</sourcePopulation>
+            <function>HexSimDomain.NetworkSegmentOccupancyUpdaterFunction</function>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Record Bass Density [ adult ]</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Record Bass Density [ adult ] )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Density [ adult bass ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>Ceil((10*h1)/h2)</expression>
+            <streamPropName>Bass:accumulator:Individuals [ adults ]</streamPropName>
+            <streamPropName>johndayriver:property:reach_area</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Get Density for Reach [ adult ]</name>
+          <description />
+          <qualifiedName>Accumulate ( Get Density for Reach [ adult ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Density [ bass ]</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Density [ adult bass ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event initialTimestep="1" period="12">
+    <transitionEvent>
+      <name>Set Spawning Eligibility [ bass ]</name>
+      <description />
+      <qualifiedName>Transition ( Set Spawning Eligibility [ bass ] )</qualifiedName>
+      <displayColor>-65</displayColor>
+      <populationName>Bass</populationName>
+      <permanent>false</permanent>
+      <transitionTrait>Spawning Eligibility</transitionTrait>
+      <trait>Age Class [ by yr ]</trait>
+      <matrixSet transposed="false" rowsReversed="false">
+        <matrixCount>1</matrixCount>
+        <rows>9</rows>
+        <columns>2</columns>
+        <matrices>
+1 0
+1 0
+1 0
+1 0
+1 0
+0.83 0.17
+0.48 0.52
+0 1
+0 1
+</matrices>
+      </matrixSet>
+    </transitionEvent>
+  </event>
+  <event>
+    <eventGroupEvent>
+      <name>Recruitment [ bass ]</name>
+      <description />
+      <qualifiedName>Event Group ( Recruitment [ bass ] )</qualifiedName>
+      <displayColor>-128</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <transitionEvent>
+          <name>Update Spawning Eligibility [ history ]</name>
+          <description />
+          <qualifiedName>Transition ( Update Spawning Eligibility [ history ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <transitionTrait>Spawning Eligibility</transitionTrait>
+          <trait>Spawning Eligibility</trait>
+          <trait>Spawning History</trait>
+          <matrixSet transposed="false" rowsReversed="false">
+            <matrixCount>1</matrixCount>
+            <rows>4</rows>
+            <columns>2</columns>
+            <matrices>
+1 0
+1 0
+0 1
+1 0
+</matrices>
+          </matrixSet>
+        </transitionEvent>
+      </event>
+      <event>
+        <transitionEvent>
+          <name>Update Spawning Eligibility [ temp ]</name>
+          <description />
+          <qualifiedName>Transition ( Update Spawning Eligibility [ temp ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <transitionTrait>Spawning Eligibility</transitionTrait>
+          <trait>Spawning Eligibility</trait>
+          <trait>Temperature Eligibility [ Spawning ]</trait>
+          <matrixSet transposed="false" rowsReversed="false">
+            <matrixCount>1</matrixCount>
+            <rows>6</rows>
+            <columns>2</columns>
+            <matrices>
+1 0
+1 0
+1 0
+1 0
+0 1
+1 0
+</matrices>
+          </matrixSet>
+        </transitionEvent>
+      </event>
+      <event>
+        <censusEvent>
+          <name>0 - Spawning Eligibility</name>
+          <description />
+          <qualifiedName>Census ( 0 - Spawning Eligibility )</qualifiedName>
+          <displayColor>-32640</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <logParams logCensus="true" logCensusGenomes="false" />
+          <trait>Spawning Eligibility</trait>
+        </censusEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Assign Fecundity [ adults 3 + based on stream width ]</name>
+          <description />
+          <qualifiedName>Accumulate ( Assign Fecundity [ adults 3 + based on stream width ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Fecundity</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Fecundity_sd</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Stream Width</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>pred_width</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Fecundity_sd</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>Cond("Age [ months ]" - 47, 172, 156)</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Fecundity_sd</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>Cond("Age [ months ]" - 59, "Fecundity_sd", 89)</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+          <!--Stratified Updater Functions Group 0-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class [ by yr ]</trait>
+            <trait>Stream Width</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Fecundity</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>171</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 1-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class [ by yr ]</trait>
+            <trait>Stream Width</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Fecundity</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>401</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 2-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class [ by yr ]</trait>
+            <trait>Stream Width</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Fecundity</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>708</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 3-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class [ by yr ]</trait>
+            <trait>Stream Width</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Fecundity</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>1106</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 4-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class [ by yr ]</trait>
+            <trait>Stream Width</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Fecundity</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>343</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 5-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class [ by yr ]</trait>
+            <trait>Stream Width</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Fecundity</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>557</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 6-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class [ by yr ]</trait>
+            <trait>Stream Width</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Fecundity</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>711</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 7-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class [ by yr ]</trait>
+            <trait>Stream Width</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Fecundity</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>917</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 8-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class [ by yr ]</trait>
+            <trait>Stream Width</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Fecundity</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>514</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 9-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class [ by yr ]</trait>
+            <trait>Stream Width</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Fecundity</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>712</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 10-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class [ by yr ]</trait>
+            <trait>Stream Width</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Fecundity</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>714</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 11-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class [ by yr ]</trait>
+            <trait>Stream Width</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1</traitCombinations>
+            <updaterFunction>
+              <accumulator>Fecundity</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>931</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+        </accumulateEvent>
+      </event>
+      <event>
+        <propagationEvent>
+          <name>Bass Recruitment</name>
+          <description />
+          <qualifiedName>Propagation ( Bass Recruitment )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <logParams logPropagationBirths="true" logPropagationFecundity="true" logPropagationGenetics="true" />
+          <trait>Spawning Eligibility</trait>
+          <traitCombinations>0 1</traitCombinations>
+          <sizeAccumulator>Fecundity</sizeAccumulator>
+          <scaleAccumulator>Fecundity_sd</scaleAccumulator>
+          <mateAccumulator />
+          <natalAffinity />
+          <breedingAffinity />
+          <locateUsingExplored>false</locateUsingExplored>
+        </propagationEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Record Births</name>
+          <description />
+          <qualifiedName>Accumulate ( Record Births )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Births</accumulator>
+            <function>HexSimDomain.BirthsUpdaterFunction</function>
+            <parameter>0</parameter>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Mark Spawned Individuals</name>
+          <description />
+          <qualifiedName>Accumulate ( Mark Spawned Individuals )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Spawned Marker</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Spawned Marker</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>Cond("Births", 1, 0)</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <transitionEvent>
+          <name>Track Repro Ineligibility</name>
+          <description />
+          <qualifiedName>Transition ( Track Repro Ineligibility )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <transitionTrait>No Reproduction Tracker</transitionTrait>
+          <trait>Temperature Eligibility [ Spawning ]</trait>
+          <trait>Age Class [ by yr ]</trait>
+          <trait>Spawning History</trait>
+          <matrixSet transposed="false" rowsReversed="false">
+            <matrixCount>1</matrixCount>
+            <rows>54</rows>
+            <columns>6</columns>
+            <matrices>
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+0 0 1 0 0 0
+0 0 0 0 1 0
+0 0 1 0 0 0
+0 0 0 0 1 0
+0 0 1 0 0 0
+0 0 0 0 1 0
+0 0 1 0 0 0
+0 0 0 0 1 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+0 0 0 0 0 1
+0 0 0 0 1 0
+0 0 0 0 0 1
+0 0 0 0 1 0
+0 0 0 0 0 1
+0 0 0 0 1 0
+0 0 0 0 0 1
+0 0 0 0 1 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+1 0 0 0 0 0
+0 0 0 1 0 0
+0 0 0 0 1 0
+0 0 0 1 0 0
+0 0 0 0 1 0
+0 0 0 1 0 0
+0 0 0 0 1 0
+0 0 0 1 0 0
+0 0 0 0 1 0
+</matrices>
+          </matrixSet>
+        </transitionEvent>
+      </event>
+      <event>
+        <censusEvent>
+          <name>1 - Repro Tracker</name>
+          <description />
+          <qualifiedName>Census ( 1 - Repro Tracker )</qualifiedName>
+          <displayColor>-32640</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <logParams logCensus="true" logCensusGenomes="false" />
+          <trait>No Reproduction Tracker</trait>
+        </censusEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event eventOff="True">
+    <eventGroupEvent>
+      <name>Movement [ crayfish ]</name>
+      <description />
+      <qualifiedName>Event Group ( Movement [ crayfish ] )</qualifiedName>
+      <displayColor>-2626561</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Calculate Upstream Resistance</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Calculate Upstream Resistance )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Upstream Factor [ cray ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression> (h1*0.75)* h2</expression>
+            <streamPropName>johndayriver:property:CrayT</streamPropName>
+            <streamPropName>johndayriver:property:cray_upst_</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Calculate Downstream Factor</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Calculate Downstream Factor )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Downstream Factor [ cray ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>h1</expression>
+            <streamPropName>johndayriver:property:CrayT</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Set Up Dispersal</name>
+          <description />
+          <qualifiedName>Accumulate ( Set Up Dispersal )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Temperature</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>CrayT</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Upstream Factor</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Upstream Factor [ cray ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Downstream Factor</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Downstream Factor [ cray ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <transitionEvent>
+          <name>Assign Dispersal Range</name>
+          <description />
+          <qualifiedName>Transition ( Assign Dispersal Range )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <transitionTrait>Dispersal Range</transitionTrait>
+          <trait>Data Recorder</trait>
+          <matrixSet transposed="false" rowsReversed="false">
+            <matrixCount>1</matrixCount>
+            <rows>2</rows>
+            <columns>17</columns>
+            <matrices>
+0.3 0.09 0.08 0.06 0.06 0.06 0.05 0.05 0.05 0.04 0.04 0.03 0.03 0.02 0.02 0.01 0.01
+0.3 0.09 0.08 0.06 0.06 0.06 0.05 0.05 0.05 0.04 0.04 0.03 0.03 0.02 0.02 0.01 0.01
+</matrices>
+          </matrixSet>
+        </transitionEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Assign Disperseral Distance</name>
+          <description />
+          <qualifiedName>Accumulate ( Assign Disperseral Distance )</qualifiedName>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Dispersal Distance</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Distance Moved [ month ]</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <!--Stratified Updater Functions Group 0-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>0</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 1-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>500 + (1000 - 500) * Rand()</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 2-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>1000 + (1500 - 1000) * Rand()</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 3-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>1500 + (2000 - 1500) * Rand()</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 4-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>2000 + (2500 - 2000) * Rand()</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 5-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>2500 + (3000 - 2500) * Rand()</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 6-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>3000 + (3500 - 3000) * Rand()</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 7-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>3500 + (4000 - 3500) * Rand()</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 8-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>4000 + (4500 - 4000) * Rand()</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 9-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>4500 + (5000 - 4500) * Rand()</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 10-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>5000 + (5500 - 5000) * Rand()</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 11-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>5500 + (6000 - 5500) * Rand()</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 12-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>6000 + (6500 - 6000) * Rand()</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 13-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>6500 + (7000 - 6500) * Rand()</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 14-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>7000 + (7500 - 7000) * Rand()</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 15-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>7500 + (8000 - 7500) * Rand()</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+          <!--Stratified Updater Functions Group 16-->
+          <stratifiedUpdaterFunctions>
+            <trait>Dispersal Range</trait>
+            <traitCombinations>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1</traitCombinations>
+            <updaterFunction>
+              <accumulator>Dispersal Distance</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>8000</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+        </accumulateEvent>
+      </event>
+      <event>
+        <networkMoveEvent>
+          <name>Dispersers Move</name>
+          <description />
+          <qualifiedName>Network Movement ( Dispersers Move )</qualifiedName>
+          <displayColor>-4144960</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <logParams logNetworkMove="true" />
+          <trait>Age Class</trait>
+          <traitCombinations>1 1 1 1</traitCombinations>
+          <direction>either</direction>
+          <applyStoppingConditions>true</applyStoppingConditions>
+          <segmentLengthProperty>shape_leng</segmentLengthProperty>
+          <upStreamScaleProperty>Upstream Factor [ cray ]</upStreamScaleProperty>
+          <downStreamScaleProperty>Downstream Factor [ cray ]</downStreamScaleProperty>
+          <seekSegment />
+          <seekDirection />
+          <distanceToMove>Dispersal Distance</distanceToMove>
+          <distanceMoved>Distance Moved [ month ]</distanceMoved>
+          <stoppedOnConditions />
+          <stoppingConditionSet>
+            <boundedStoppingCondition>
+              <propertyName>CrayT</propertyName>
+              <lowerBound>0</lowerBound>
+              <upperBound>0</upperBound>
+            </boundedStoppingCondition>
+            <probability>1</probability>
+          </stoppingConditionSet>
+          <branchingConditionSet>
+            <boundedBranchingCondition>
+              <propertyName>CrayT</propertyName>
+              <lowerBound>1</lowerBound>
+              <upperBound>1</upperBound>
+            </boundedBranchingCondition>
+            <probability>0.8</probability>
+          </branchingConditionSet>
+        </networkMoveEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Update Destination Temp</name>
+          <description />
+          <qualifiedName>Accumulate ( Update Destination Temp )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Temperature</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>MeanT</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Reach ID</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>reachID</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Update Distance Moved</name>
+          <description />
+          <qualifiedName>Accumulate ( Update Distance Moved )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Distance Moved [ month ]</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>"Distance Moved [ month ]"</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Distance Moved [ month ]</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>Floor("Distance Moved [ month ]" + 0.5)</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Distance Moved [ annual ]</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>"Distance Moved [ annual ]" + "Distance Moved [ month ]"</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event eventOff="True">
+    <eventGroupEvent>
+      <name>Update Density Estimates [ crayfish ]</name>
+      <description />
+      <qualifiedName>Event Group ( Update Density Estimates [ crayfish ] )</qualifiedName>
+      <displayColor>-1641729</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <accumulateEvent>
+          <name>Update Super-Individual Count</name>
+          <description />
+          <qualifiedName>Accumulate ( Update Super-Individual Count )</qualifiedName>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Individuals [ adults ]</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>Cond("Age [ months ]" -13, 4, 0)</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Update Occupancy Count</name>
+          <description />
+          <qualifiedName>Accumulate ( Update Occupancy Count )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Segment Manager</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Occupants [ cray ]</accumulator>
+            <sourcePopulation>Crayfish</sourcePopulation>
+            <function>HexSimDomain.NetworkSegmentOccupancyUpdaterFunction</function>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Record Crayfish Density [ adult ]</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Record Crayfish Density [ adult ] )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Density [ adult cray ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>Ceil((2*10*h1)/h2)</expression>
+            <streamPropName>Crayfish:accumulator:Individuals [ adults ]</streamPropName>
+            <streamPropName>johndayriver:property:reach_area</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Get Density for Reach [ adult ]</name>
+          <description />
+          <qualifiedName>Accumulate ( Get Density for Reach [ adult ] )</qualifiedName>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Density [ cray ]</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Density [ adult cray ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event eventOff="True" initialTimestep="2" period="12">
+    <eventGroupEvent>
+      <name>Recruitment [ crayfish ]</name>
+      <description />
+      <qualifiedName>Event Group ( Recruitment [ crayfish ] )</qualifiedName>
+      <displayColor>-2757889</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <transitionEvent>
+          <name>Set Spawning Status [ age ]</name>
+          <description />
+          <qualifiedName>Transition ( Set Spawning Status [ age ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <transitionTrait>Spawning Status</transitionTrait>
+          <trait>Age Class</trait>
+          <matrixSet transposed="false" rowsReversed="false">
+            <matrixCount>1</matrixCount>
+            <rows>4</rows>
+            <columns>2</columns>
+            <matrices>
+1 0
+0.9 0.1
+0.2 0.8
+0.1 0.9
+</matrices>
+          </matrixSet>
+        </transitionEvent>
+      </event>
+      <event>
+        <transitionEvent>
+          <name>Set Spawning Eligiblity [ temp ]</name>
+          <description />
+          <qualifiedName>Transition ( Set Spawning Eligiblity [ temp ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <transitionTrait>Spawning Eligibility</transitionTrait>
+          <trait>Spawning Temperature Threshold</trait>
+          <trait>Spawning Status</trait>
+          <matrixSet transposed="false" rowsReversed="false">
+            <matrixCount>1</matrixCount>
+            <rows>6</rows>
+            <columns>2</columns>
+            <matrices>
+1 0
+1 0
+1 0
+0 1
+1 0
+1 0
+</matrices>
+          </matrixSet>
+        </transitionEvent>
+      </event>
+      <event>
+        <censusEvent>
+          <name>2 - Spawning Eligibility</name>
+          <description />
+          <qualifiedName>Census ( 2 - Spawning Eligibility )</qualifiedName>
+          <displayColor>-32640</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <logParams logCensus="true" logCensusGenomes="false" />
+          <trait>Spawning Eligibility</trait>
+        </censusEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Assign Fecundity</name>
+          <description />
+          <qualifiedName>Accumulate ( Assign Fecundity )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Density [ cray ]</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Density [ adult cray ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Fecundity</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>Cond("Age [ months ]" - 14 , 7.5, 5)</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Fecundity</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>Cond(30 - "Age [ months ]", "Fecundity", 9.375)</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Fecundity_sd</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>Cond("Age [ months ]" - 14 ,  2.5, 1.25)</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Fecundity_sd</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>Cond(30 - "Age [ months ]", "Fecundity_sd", 3)</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Fecundity_density</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>"Fecundity" - ("Density [ cray ]"*"Fecundity"/150)</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Fecundity_sd_density</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>"Fecundity_sd" - ("Density [ cray ]"*"Fecundity_sd"/150)</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <propagationEvent>
+          <name>Perform Recruitment</name>
+          <description>Rates includes egg hatching success and other sources of early mortality. Rates represent number of individual young that successfully separate from female.</description>
+          <qualifiedName>Propagation ( Perform Recruitment )</qualifiedName>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <logParams logPropagationBirths="true" logPropagationFecundity="true" logPropagationGenetics="true" />
+          <trait>Spawning Eligibility</trait>
+          <traitCombinations>0 1</traitCombinations>
+          <sizeAccumulator>Fecundity_density</sizeAccumulator>
+          <scaleAccumulator>Fecundity_sd_density</scaleAccumulator>
+          <mateAccumulator />
+          <natalAffinity />
+          <breedingAffinity />
+          <locateUsingExplored>false</locateUsingExplored>
+        </propagationEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Record Births</name>
+          <description />
+          <qualifiedName>Accumulate ( Record Births )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Births</accumulator>
+            <function>HexSimDomain.BirthsUpdaterFunction</function>
+            <parameter>0</parameter>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <transitionEvent>
+          <name>Track Repro Ineligibilty Reason</name>
+          <description />
+          <qualifiedName>Transition ( Track Repro Ineligibilty Reason )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <transitionTrait>No Reproduction Tracker</transitionTrait>
+          <trait>Spawning Status</trait>
+          <trait>Spawning Temperature Threshold</trait>
+          <matrixSet transposed="false" rowsReversed="false">
+            <matrixCount>1</matrixCount>
+            <rows>6</rows>
+            <columns>7</columns>
+            <matrices>
+0 1 0 0 0 0 0
+0 0 0 1 0 0 0
+0 0 1 0 0 0 0
+0 0 0 0 1 0 0
+0 0 0 0 0 0 1
+0 0 0 0 0 1 0
+</matrices>
+          </matrixSet>
+        </transitionEvent>
+      </event>
+      <event>
+        <censusEvent>
+          <name>3 - Repro Tracker</name>
+          <description />
+          <qualifiedName>Census ( 3 - Repro Tracker )</qualifiedName>
+          <displayColor>-32640</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <logParams logCensus="true" logCensusGenomes="false" />
+          <trait>No Reproduction Tracker</trait>
+        </censusEvent>
+      </event>
+      <event>
+        <dataProbeEvent>
+          <name>Write Recruitment Stats</name>
+          <description />
+          <qualifiedName>Data Probe ( Write Recruitment Stats )</qualifiedName>
+          <displayColor>-4268806</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <trait>Data Recorder</trait>
+          <traitCombinations>0 1</traitCombinations>
+          <accumulator>Reach ID</accumulator>
+          <accumulator>Age [ months ]</accumulator>
+          <accumulator>Fecundity</accumulator>
+          <accumulator>Fecundity_density</accumulator>
+          <accumulator>Fecundity_sd</accumulator>
+          <accumulator>Fecundity_sd_density</accumulator>
+          <accumulator>Density [ cray ]</accumulator>
+          <accumulator>Births</accumulator>
+        </dataProbeEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event eventOff="True">
+    <eventGroupEvent>
+      <name>Predation [ crayfish eat bass ]</name>
+      <description />
+      <qualifiedName>Event Group ( Predation [ crayfish eat bass ] )</qualifiedName>
+      <displayColor>-4079105</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <accumulateEvent>
+          <name>Get Crayfish Density [ segment manager ]</name>
+          <description />
+          <qualifiedName>Accumulate ( Get Crayfish Density [ segment manager ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Number of Adults [ per reach ]</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <!--Stratified Updater Functions Group 0-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class</trait>
+            <traitCombinations>0 1 1 1</traitCombinations>
+            <updaterFunction>
+              <accumulator>Number of Adults [ per reach ]</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>1</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+        </accumulateEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Record Crayfish Density</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Record Crayfish Density )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Density [ predatory cray ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>(h1*2*4) / h2</expression>
+            <streamPropName>Crayfish:accumulator:Number of Adults [ per reach ]</streamPropName>
+            <streamPropName>johndayriver:property:reach_area</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Calculate Predator Density of Crayfish</name>
+          <description />
+          <qualifiedName>Accumulate ( Calculate Predator Density of Crayfish )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Predator Density of Crayfish</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Density [ predatory cray ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <censusEvent>
+          <name>4 - Check Predator Density</name>
+          <description />
+          <qualifiedName>Census ( 4 - Check Predator Density )</qualifiedName>
+          <displayColor>-32640</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <logParams logCensus="true" logCensusGenomes="false" />
+          <trait>Predator Density of Crayfish [ adults ]</trait>
+        </censusEvent>
+      </event>
+      <event>
+        <dataProbeEvent>
+          <name>YOY Presence</name>
+          <description />
+          <qualifiedName>Data Probe ( YOY Presence )</qualifiedName>
+          <displayColor>-8323200</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <trait>Age Class [ by grp ]</trait>
+          <traitCombinations>1 0 0</traitCombinations>
+          <accumulator>Reach ID</accumulator>
+          <accumulator>Reach Area</accumulator>
+          <accumulator>Predator Density of Crayfish</accumulator>
+        </dataProbeEvent>
+      </event>
+      <event>
+        <survivalEvent>
+          <name>YOY Survival [ crayfish predation ]</name>
+          <description />
+          <qualifiedName>Survival ( YOY Survival [ crayfish predation ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <logParams logSurvival="true" logSurvivalDeaths="true" />
+          <useAccumulator>false</useAccumulator>
+          <matrixSet transposed="false" rowsReversed="false">
+            <matrixCount>1</matrixCount>
+            <rows>60</rows>
+            <columns>1</columns>
+            <matrices>
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+0.995
+0.98
+0.95
+0.8925
+0.82
+0.74
+0.995
+0.98
+0.95
+0.82
+0.5
+0.26
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+</matrices>
+          </matrixSet>
+          <trait>Temperature [ cray predation on bass ]</trait>
+          <trait>Age Class [ yoy ]</trait>
+          <trait>Predator Density of Crayfish [ adults ]</trait>
+        </survivalEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event>
+    <eventGroupEvent>
+      <name>Survival [ bass ]</name>
+      <description />
+      <qualifiedName>Event Group ( Survival [ bass ] )</qualifiedName>
+      <displayColor>-128</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <survivalEvent>
+          <name>Survival [ Age 0 ]</name>
+          <description />
+          <qualifiedName>Survival ( Survival [ Age 0 ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <logParams logSurvival="true" logSurvivalDeaths="true" />
+          <useAccumulator>false</useAccumulator>
+          <matrixSet transposed="false" rowsReversed="false">
+            <matrixCount>1</matrixCount>
+            <rows>155</rows>
+            <columns>1</columns>
+            <matrices>
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0.0632
+0.0632
+0.0632
+0.0632
+0.0632
+0.0632
+0.0632
+0.0632
+0.0632
+0.0632
+0.0632
+0.0632
+0.0632
+0.0632
+0.0632
+0.0632
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0.1587
+0.1587
+0.1587
+0.1587
+0.1587
+0.1587
+0.1587
+0.1587
+0.1587
+0.1587
+0.1587
+0.1587
+0.1587
+0.1587
+0.1587
+0.1587
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0.3984
+0.3984
+0.3984
+0.3984
+0.3984
+0.3984
+0.3984
+0.3984
+0.3984
+0.3984
+0.3984
+0.3984
+0.3984
+0.3984
+0.3984
+0.3984
+0
+0
+0
+0
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+</matrices>
+          </matrixSet>
+          <trait>Age Class [ yoy ]</trait>
+          <trait>Temperature [ survival ]</trait>
+        </survivalEvent>
+      </event>
+      <event>
+        <survivalEvent>
+          <name>Survival [ Age 1+ ]</name>
+          <description />
+          <qualifiedName>Survival ( Survival [ Age 1+ ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <logParams logSurvival="true" logSurvivalDeaths="true" />
+          <useAccumulator>false</useAccumulator>
+          <matrixSet transposed="false" rowsReversed="false">
+            <matrixCount>1</matrixCount>
+            <rows>93</rows>
+            <columns>1</columns>
+            <matrices>
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+0.92
+0.92
+0.92
+0.93
+0.93
+0.93
+0.93
+0.93
+0.94
+0.94
+0.94
+0.94
+0.94
+0.95
+0.95
+0.95
+0.95
+0.95
+0.96
+0.96
+0.96
+0.96
+0.96
+0.97
+0.97
+0.97
+0.97
+0.97
+0.97
+0.97
+0.92
+0.91
+0.91
+0.91
+0.92
+0.92
+0.92
+0.92
+0.93
+0.93
+0.93
+0.94
+0.94
+0.94
+0.94
+0.95
+0.95
+0.95
+0.96
+0.96
+0.96
+0.96
+0.96
+0.96
+0.96
+0.96
+0.96
+0.96
+0.95
+0.93
+0.92
+0.91
+</matrices>
+          </matrixSet>
+          <trait>Age Class [ by grp ]</trait>
+          <trait>Temperature [ survival ]</trait>
+        </survivalEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event eventOff="True" initialTimestep="13">
+    <eventGroupEvent>
+      <name>Survival [ crayfish ]</name>
+      <description />
+      <qualifiedName>Event Group ( Survival [ crayfish ] )</qualifiedName>
+      <displayColor>-2626561</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <survivalEvent>
+          <name>Survival [ temp ]</name>
+          <description />
+          <qualifiedName>Survival ( Survival [ temp ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <logParams logSurvival="true" logSurvivalDeaths="true" />
+          <useAccumulator>false</useAccumulator>
+          <matrixSet transposed="false" rowsReversed="false">
+            <matrixCount>1</matrixCount>
+            <rows>152</rows>
+            <columns>1</columns>
+            <matrices>
+0.86
+0.87
+0.87
+0.88
+0.88
+0.89
+0.9
+0.9
+0.91
+0.91
+0.92
+0.92
+0.93
+0.94
+0.94
+0.95
+0.95
+0.96
+0.96
+0.96
+0.96
+0.96
+0.95
+0.95
+0.94
+0.93
+0.93
+0.92
+0.92
+0.91
+0.9
+0.9
+0.89
+0.88
+0.88
+0.87
+0.87
+0.86
+0.92
+0.92
+0.93
+0.93
+0.94
+0.94
+0.95
+0.95
+0.96
+0.96
+0.97
+0.97
+0.98
+0.98
+0.99
+0.99
+1
+1
+1
+1
+1
+1
+1
+0.99
+0.98
+0.98
+0.98
+0.97
+0.96
+0.96
+0.96
+0.95
+0.95
+0.94
+0.94
+0.93
+0.92
+0.92
+0.89
+0.9
+0.9
+0.91
+0.91
+0.92
+0.93
+0.93
+0.94
+0.94
+0.95
+0.95
+0.96
+0.97
+0.97
+0.98
+0.98
+0.99
+0.99
+0.99
+0.99
+0.99
+0.98
+0.98
+0.97
+0.96
+0.96
+0.95
+0.95
+0.94
+0.93
+0.93
+0.92
+0.92
+0.91
+0.9
+0.9
+0.89
+0.67
+0.68
+0.68
+0.69
+0.69
+0.7
+0.71
+0.71
+0.72
+0.72
+0.73
+0.73
+0.74
+0.75
+0.75
+0.76
+0.76
+0.77
+0.77
+0.77
+0.77
+0.77
+0.76
+0.76
+0.75
+0.74
+0.74
+0.73
+0.73
+0.72
+0.71
+0.71
+0.7
+0.7
+0.69
+0.68
+0.68
+0.67
+</matrices>
+          </matrixSet>
+          <trait>Age Class</trait>
+          <trait>Temperature [ survival ]</trait>
+        </survivalEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event eventOff="True">
+    <eventGroupEvent>
+      <name>Predation [ bass eat crayfish ]</name>
+      <description />
+      <qualifiedName>Event Group ( Predation [ bass eat crayfish ] )</qualifiedName>
+      <displayColor>-4079105</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <transitionEvent>
+          <name>Set Bass Consumption of Crayfish Class</name>
+          <description />
+          <qualifiedName>Transition ( Set Bass Consumption of Crayfish Class )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <transitionTrait>Crayfish Consumption Class</transitionTrait>
+          <trait>Age Class [ predation ]</trait>
+          <trait>Temperature [ bass predation on crayfish ]</trait>
+          <matrixSet transposed="false" rowsReversed="false">
+            <matrixCount>1</matrixCount>
+            <rows>16</rows>
+            <columns>5</columns>
+            <matrices>
+1 0 0 0 0
+1 0 0 0 0
+1 0 0 0 0
+1 0 0 0 0
+1 0 0 0 0
+1 0 0 0 0
+1 0 0 0 0
+1 0 0 0 0
+1 0 0 0 0
+0 1 0 0 0
+0 0 1 0 0
+0 0 1 0 0
+0 0 0 1 0
+0 0 0 1 0
+0 0 0 0 1
+0 1 0 0 0
+</matrices>
+          </matrixSet>
+        </transitionEvent>
+      </event>
+      <event>
+        <censusEvent>
+          <name>5 - Check Consumption Class</name>
+          <description />
+          <qualifiedName>Census ( 5 - Check Consumption Class )</qualifiedName>
+          <displayColor>-32640</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <logParams logCensus="true" logCensusGenomes="false" />
+          <trait>Crayfish Consumption Class</trait>
+        </censusEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Set Consumption Class Number [ light consumers ]</name>
+          <description />
+          <qualifiedName>Accumulate ( Set Consumption Class Number [ light consumers ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Consumption Marker</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <!--Stratified Updater Functions Group 0-->
+          <stratifiedUpdaterFunctions>
+            <trait>Crayfish Consumption Class</trait>
+            <traitCombinations>0 1 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Consumption Marker</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>1</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+        </accumulateEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Sum Bass [ light consumers ]</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Sum Bass [ light consumers ] )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Bass [ light consumers ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>h1</expression>
+            <streamPropName>Bass:accumulator:Consumption Marker</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Set Predation Class Number [ moderate consumers ]</name>
+          <description />
+          <qualifiedName>Accumulate ( Set Predation Class Number [ moderate consumers ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Consumption Marker</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <!--Stratified Updater Functions Group 0-->
+          <stratifiedUpdaterFunctions>
+            <trait>Crayfish Consumption Class</trait>
+            <traitCombinations>0 0 1 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Consumption Marker</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>1</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+        </accumulateEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Sum Bass [ moderate consumers ]</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Sum Bass [ moderate consumers ] )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Bass [ moderate consumers ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>h1</expression>
+            <streamPropName>Bass:accumulator:Consumption Marker</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Set Predation Class Number [ heavy consumers ]</name>
+          <description />
+          <qualifiedName>Accumulate ( Set Predation Class Number [ heavy consumers ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Consumption Marker</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <!--Stratified Updater Functions Group 0-->
+          <stratifiedUpdaterFunctions>
+            <trait>Crayfish Consumption Class</trait>
+            <traitCombinations>0 0 0 1 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Consumption Marker</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>1</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+        </accumulateEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Sum Bass [ heavy consumers ]</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Sum Bass [ heavy consumers ] )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Bass [ heavy consumers ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>h1</expression>
+            <streamPropName>Bass:accumulator:Consumption Marker</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Set Predation Class Number [ extreme consumers ]</name>
+          <description />
+          <qualifiedName>Accumulate ( Set Predation Class Number [ extreme consumers ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Consumption Marker</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <!--Stratified Updater Functions Group 0-->
+          <stratifiedUpdaterFunctions>
+            <trait>Crayfish Consumption Class</trait>
+            <traitCombinations>0 0 0 0 1</traitCombinations>
+            <updaterFunction>
+              <accumulator>Consumption Marker</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>1</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+        </accumulateEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Sum Bass [ extreme consumers ]</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Sum Bass [ extreme consumers ] )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Bass [ extreme consumers ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>h1</expression>
+            <streamPropName>Bass:accumulator:Consumption Marker</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Get Bass Occupancy by Consumption Class</name>
+          <description />
+          <qualifiedName>Accumulate ( Get Bass Occupancy by Consumption Class )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Segment Manager</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Occupancy [ light consumers ]</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Bass [ light consumers ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Occupancy [ moderate consumers ]</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Bass [ moderate consumers ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Occupancy [ heavy consumers ]</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Bass [ heavy consumers ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Occupancy [ extreme consumers ]</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Bass [ extreme consumers ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Occupants [ bass ]</accumulator>
+            <sourcePopulation>Bass</sourcePopulation>
+            <function>HexSimDomain.NetworkSegmentOccupancyUpdaterFunction</function>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <dataProbeEvent>
+          <name>Predatory Occupany</name>
+          <description />
+          <qualifiedName>Data Probe ( Predatory Occupany )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Segment Manager</populationName>
+          <permanent>false</permanent>
+          <trait>Dummy</trait>
+          <traitCombinations>1 0</traitCombinations>
+          <accumulator>Reach ID</accumulator>
+          <accumulator>Occupancy [ light consumers ]</accumulator>
+          <accumulator>Number Cray Prey [ light consumers ]</accumulator>
+          <accumulator>Occupancy [ moderate consumers ]</accumulator>
+          <accumulator>Number Cray Prey [ moderate consumers ]</accumulator>
+          <accumulator>Occupancy [ heavy consumers ]</accumulator>
+          <accumulator>Number Cray Prey [ heavy consumers ]</accumulator>
+          <accumulator>Occupancy [ extreme consumers ]</accumulator>
+          <accumulator>Number Cray Prey [ extreme consumers ]</accumulator>
+        </dataProbeEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Calculate Crayfish to Remove</name>
+          <description />
+          <qualifiedName>Accumulate ( Calculate Crayfish to Remove )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Segment Manager</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Number Cray Prey [ light consumers ]</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter> "Occupancy [ light consumers ]" * 2</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Number Cray Prey [ moderate consumers ]</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>"Occupancy [ moderate consumers ]" *5</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Number Cray Prey [ heavy consumers ]</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>"Occupancy [ heavy consumers ]" * 9</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Number Cray Prey [ extreme consumers ]</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>"Occupancy [ heavy consumers ]" * 14</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Calculate Total Crayfish Prey [ per reach ]</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Calculate Total Crayfish Prey [ per reach ] )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Monthly Total Crayfish Prey [ per reach ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>h1 + h2 + h3 + h4</expression>
+            <streamPropName>Segment Manager:accumulator:Number Cray Prey [ light consumers ]</streamPropName>
+            <streamPropName>Segment Manager:accumulator:Number Cray Prey [ moderate consumers ]</streamPropName>
+            <streamPropName>Segment Manager:accumulator:Number Cray Prey [ heavy consumers ]</streamPropName>
+            <streamPropName>Segment Manager:accumulator:Number Cray Prey [ extreme consumers ]</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Mark Crayfish for Removal</name>
+          <description />
+          <qualifiedName>Accumulate ( Mark Crayfish for Removal )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Death by Predation [ this month ]</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Survival [ predation ]</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Monthly Total Crayfish Prey [ per reach ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <!--Stratified Updater Functions Group 0-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class</trait>
+            <traitCombinations>0 1 1 1</traitCombinations>
+            <updaterFunction>
+              <accumulator>Death by Predation [ this month ]</accumulator>
+              <sourceAccumulator>Survival [ predation ]</sourceAccumulator>
+              <function>HexSimDomain.SubpopulationSelectorUpdaterFunction</function>
+              <parameter>Monthly Total Crayfish Prey [ per reach ]</parameter>
+              <accumulateSpatialData>johndayriver</accumulateSpatialData>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+        </accumulateEvent>
+      </event>
+      <event>
+        <censusEvent>
+          <name>6 - Crayfish Predation Outcome</name>
+          <description />
+          <qualifiedName>Census ( 6 - Crayfish Predation Outcome )</qualifiedName>
+          <displayColor>-32640</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <logParams logCensus="true" logCensusGenomes="false" />
+          <trait>Predation Outcome</trait>
+        </censusEvent>
+      </event>
+      <event>
+        <survivalEvent>
+          <name>Remove Crayfish Prey</name>
+          <description />
+          <qualifiedName>Survival ( Remove Crayfish Prey )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <logParams logSurvival="true" logSurvivalDeaths="true" />
+          <useAccumulator>false</useAccumulator>
+          <matrixSet transposed="false" rowsReversed="false">
+            <matrixCount>1</matrixCount>
+            <rows>2</rows>
+            <columns>1</columns>
+            <matrices>
+1
+0
+</matrices>
+          </matrixSet>
+          <trait>Predation Outcome</trait>
+        </survivalEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event initialTimestep="11" period="12">
+    <eventGroupEvent>
+      <name>Survival GDD [ bass ]</name>
+      <description />
+      <qualifiedName>Event Group ( Survival GDD [ bass ] )</qualifiedName>
+      <displayColor>-128</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <accumulateEvent>
+          <name>Assign Growing Degree Days [ bass ]</name>
+          <description />
+          <qualifiedName>Accumulate ( Assign Growing Degree Days [ bass ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Growing Degree Days</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <!--Stratified Updater Functions Group 0-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class [ by grp ]</trait>
+            <traitCombinations>1 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Growing Degree Days</accumulator>
+              <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+              <parameter>GDD</parameter>
+              <accumulateSpatialData>johndayriver</accumulateSpatialData>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+        </accumulateEvent>
+      </event>
+      <event>
+        <censusEvent>
+          <name>7 - Check GDD</name>
+          <description />
+          <qualifiedName>Census ( 7 - Check GDD )</qualifiedName>
+          <displayColor>-32640</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <logParams logCensus="true" logCensusGenomes="false" />
+          <trait>Age Class [ by yr ]</trait>
+          <trait>Cumulative GDD</trait>
+        </censusEvent>
+      </event>
+      <event>
+        <survivalEvent>
+          <name>Survival YoY [ GDD ]</name>
+          <description />
+          <qualifiedName>Survival ( Survival YoY [ GDD ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <logParams logSurvival="true" logSurvivalDeaths="true" />
+          <useAccumulator>false</useAccumulator>
+          <matrixSet transposed="false" rowsReversed="false">
+            <matrixCount>1</matrixCount>
+            <rows>6</rows>
+            <columns>1</columns>
+            <matrices>
+0
+1
+1
+1
+1
+1
+</matrices>
+          </matrixSet>
+          <trait>Cumulative GDD</trait>
+          <trait>Age Class [ by grp ]</trait>
+        </survivalEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event>
+    <eventGroupEvent>
+      <name>End Month [ bass ]</name>
+      <description />
+      <qualifiedName>Event Group ( End Month [ bass ] )</qualifiedName>
+      <displayColor>-855552</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <accumulateEvent>
+          <name>Increment Age</name>
+          <description />
+          <qualifiedName>Accumulate ( Increment Age )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Age [ months ]</accumulator>
+            <function>HexSimDomain.IncrementUpdaterFunction</function>
+            <parameter>1</parameter>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Survival [ max age ]</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>Cond ( 'Max Age Months [ bass ]' - "Age [ months ]", 1, 0 )</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <survivalEvent>
+          <name>Impose Max Age</name>
+          <description />
+          <qualifiedName>Survival ( Impose Max Age )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <logParams logSurvival="true" logSurvivalDeaths="true" />
+          <useAccumulator>true</useAccumulator>
+          <survivalAccumulator>Survival [ max age ]</survivalAccumulator>
+        </survivalEvent>
+      </event>
+      <event>
+        <censusEvent>
+          <name>8 - Bass Age [ months ]</name>
+          <description />
+          <qualifiedName>Census ( 8 - Bass Age [ months ] )</qualifiedName>
+          <displayColor>-32640</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <logParams logCensus="true" logCensusGenomes="false" />
+          <trait>Age Class [ by yr ]</trait>
+        </censusEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event initialTimestep="12" period="12">
+    <eventGroupEvent>
+      <name>End Year [ bass ]</name>
+      <description />
+      <qualifiedName>Event Group ( End Year [ bass ] )</qualifiedName>
+      <displayColor>-723968</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <transitionEvent>
+          <name>Reset Spawning Past</name>
+          <description />
+          <qualifiedName>Transition ( Reset Spawning Past )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <transitionTrait>Spawning History</transitionTrait>
+          <trait>Spawning History</trait>
+          <matrixSet transposed="false" rowsReversed="false">
+            <matrixCount>1</matrixCount>
+            <rows>2</rows>
+            <columns>2</columns>
+            <matrices>
+1 0
+1 0
+</matrices>
+          </matrixSet>
+        </transitionEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Clear Annual Values</name>
+          <description />
+          <qualifiedName>Accumulate ( Clear Annual Values )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Distance Moved [ annual ]</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Births</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <censusEvent>
+          <name>9 - Bass Age Classes</name>
+          <description />
+          <qualifiedName>Census ( 9 - Bass Age Classes )</qualifiedName>
+          <displayColor>-32640</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <logParams logCensus="true" logCensusGenomes="false" />
+          <trait>Age Class [ by grp ]</trait>
+        </censusEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event eventOff="True">
+    <eventGroupEvent>
+      <name>End Month [ crayfish ]</name>
+      <description />
+      <qualifiedName>Event Group ( End Month [ crayfish ] )</qualifiedName>
+      <displayColor>-6303745</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <accumulateEvent>
+          <name>Increment Age</name>
+          <description />
+          <qualifiedName>Accumulate ( Increment Age )</qualifiedName>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Age [ months ]</accumulator>
+            <function>HexSimDomain.IncrementUpdaterFunction</function>
+            <parameter>1</parameter>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Survival [ max age ]</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>Cond ( 'Max Age Months [ crayfish ]' - "Age [ months ]", 1, 0 )</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <survivalEvent>
+          <name>Impose Max Age</name>
+          <description />
+          <qualifiedName>Survival ( Impose Max Age )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <logParams logSurvival="true" logSurvivalDeaths="true" />
+          <useAccumulator>true</useAccumulator>
+          <survivalAccumulator>Survival [ max age ]</survivalAccumulator>
+        </survivalEvent>
+      </event>
+      <event>
+        <censusEvent>
+          <name>10 - Crayfish Age [ months ]</name>
+          <description />
+          <qualifiedName>Census ( 10 - Crayfish Age [ months ] )</qualifiedName>
+          <displayColor>-32640</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <logParams logCensus="true" logCensusGenomes="false" />
+          <trait>Age [ months ]</trait>
+        </censusEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event eventOff="True" initialTimestep="12" period="12">
+    <eventGroupEvent>
+      <name>End Year [ crayfish ]</name>
+      <description />
+      <qualifiedName>Event Group ( End Year [ crayfish ] )</qualifiedName>
+      <displayColor>-6303745</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <accumulateEvent>
+          <name>Clear Values [ annual ]</name>
+          <description />
+          <qualifiedName>Accumulate ( Clear Values [ annual ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Distance Moved [ annual ]</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Births</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <censusEvent>
+          <name>11 - Cray Age Classes</name>
+          <description />
+          <qualifiedName>Census ( 11 - Cray Age Classes )</qualifiedName>
+          <displayColor>-32640</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <logParams logCensus="true" logCensusGenomes="false" />
+          <trait>Age Class</trait>
+        </censusEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event>
+    <eventGroupEvent>
+      <name>Write Monthly Segment Data [ bass ]</name>
+      <description />
+      <qualifiedName>Event Group ( Write Monthly Segment Data [ bass ] )</qualifiedName>
+      <displayColor>-855552</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <accumulateEvent>
+          <name>Update Super-Individual Count</name>
+          <description />
+          <qualifiedName>Accumulate ( Update Super-Individual Count )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Individuals [ adults ]</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>Cond("Age [ months ]" -13, 2, 0)</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Record Bass Density [ adult ]</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Record Bass Density [ adult ] )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Density [ adult bass ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>Ceil((10*h1)/h2)</expression>
+            <streamPropName>Bass:accumulator:Individuals [ adults ]</streamPropName>
+            <streamPropName>johndayriver:property:reach_area</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Get Reachwide Data [ manager ]</name>
+          <description />
+          <qualifiedName>Accumulate ( Get Reachwide Data [ manager ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Segment Manager</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Reach ID</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>reachID</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Reach Area</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>reach_area</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Temperature [ actual ]</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>MeanT</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Temp [ bass proportion ]</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>BassT</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Density [ bass ]</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Density [ adult bass ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Occupants [ bass ]</accumulator>
+            <sourcePopulation>Bass</sourcePopulation>
+            <function>HexSimDomain.NetworkSegmentOccupancyUpdaterFunction</function>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <dataProbeEvent>
+          <name>Write Reachwide Data [ bass ]</name>
+          <description />
+          <qualifiedName>Data Probe ( Write Reachwide Data [ bass ] )</qualifiedName>
+          <displayColor>-8323200</displayColor>
+          <populationName>Segment Manager</populationName>
+          <permanent>false</permanent>
+          <trait>Dummy</trait>
+          <traitCombinations>1 1</traitCombinations>
+          <accumulator>Reach ID</accumulator>
+          <accumulator>Temperature [ actual ]</accumulator>
+          <accumulator>Reach Area</accumulator>
+          <accumulator>Occupants [ bass ]</accumulator>
+          <accumulator>Density [ bass ]</accumulator>
+          <accumulator>Temp [ bass proportion ]</accumulator>
+        </dataProbeEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event eventOff="True">
+    <eventGroupEvent>
+      <name>Write Monthly Segment Data [ crayfish ]</name>
+      <description />
+      <qualifiedName>Event Group ( Write Monthly Segment Data [ crayfish ] )</qualifiedName>
+      <displayColor>-6435073</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <accumulateEvent>
+          <name>Update Super-Individual Count</name>
+          <description />
+          <qualifiedName>Accumulate ( Update Super-Individual Count )</qualifiedName>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Individuals [ adults ]</accumulator>
+            <function>HexSimDomain.ExpressionUpdaterFunction</function>
+            <parameter>Cond("Age [ months ]" -13, 4, 0)</parameter>
+            <parameter>0</parameter>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Record Crayfish Density [ adult ]</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Record Crayfish Density [ adult ] )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Density [ adult cray ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>Ceil((2*10*h1)/h2)</expression>
+            <streamPropName>Crayfish:accumulator:Individuals [ adults ]</streamPropName>
+            <streamPropName>johndayriver:property:reach_area</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Get Reachwide Data [ crayfish ]</name>
+          <description />
+          <qualifiedName>Accumulate ( Get Reachwide Data [ crayfish ] )</qualifiedName>
+          <populationName>Segment Manager</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Reach ID</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>reachID</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Reach Area</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>reach_area</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Temperature [ actual ]</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>MeanT</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Temp [ cray proportion ]</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>CrayT</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Density [ cray ]</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Density [ adult cray ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Occupants [ cray ]</accumulator>
+            <sourcePopulation>Crayfish</sourcePopulation>
+            <function>HexSimDomain.NetworkSegmentOccupancyUpdaterFunction</function>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <dataProbeEvent>
+          <name>Write Reachwide Data [ crayfish ]</name>
+          <description />
+          <qualifiedName>Data Probe ( Write Reachwide Data [ crayfish ] )</qualifiedName>
+          <displayColor>-8323200</displayColor>
+          <populationName>Segment Manager</populationName>
+          <permanent>false</permanent>
+          <trait>Dummy</trait>
+          <traitCombinations>1 1</traitCombinations>
+          <accumulator>Reach ID</accumulator>
+          <accumulator>Temperature [ actual ]</accumulator>
+          <accumulator>Temp [ cray proportion ]</accumulator>
+          <accumulator>Reach Area</accumulator>
+          <accumulator>Occupants [ cray ]</accumulator>
+          <accumulator>Density [ cray ]</accumulator>
+        </dataProbeEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event initialTimestep="12" period="12">
+    <eventGroupEvent>
+      <name>Write Annual Segment Output [ bass ]</name>
+      <description />
+      <qualifiedName>Event Group ( Write Annual Segment Output [ bass ] )</qualifiedName>
+      <displayColor>-1250304</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <accumulateEvent>
+          <name>Mark YoY</name>
+          <description />
+          <qualifiedName>Accumulate ( Mark YoY )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Temporary Age Class Marker</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <!--Stratified Updater Functions Group 0-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class [ by grp ]</trait>
+            <traitCombinations>1 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Temporary Age Class Marker</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>1</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+        </accumulateEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Record Number of YoY [ per reach ]</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Record Number of YoY [ per reach ] )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Number of YoY [ bass per reach ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>h1</expression>
+            <streamPropName>Bass:accumulator:Temporary Age Class Marker</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Mark Juveniles</name>
+          <description />
+          <qualifiedName>Accumulate ( Mark Juveniles )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Temporary Age Class Marker</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <!--Stratified Updater Functions Group 0-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class [ by yr ]</trait>
+            <traitCombinations>0 0 0 1 1 0 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Temporary Age Class Marker</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>1</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+        </accumulateEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Record Number of Juveniles [ per reach ]</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Record Number of Juveniles [ per reach ] )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Number of Juveniles [ bass per reach ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>h1</expression>
+            <streamPropName>Bass:accumulator:Temporary Age Class Marker</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Mark Adults [ 3 ]</name>
+          <description />
+          <qualifiedName>Accumulate ( Mark Adults [ 3 ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Temporary Age Class Marker</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <!--Stratified Updater Functions Group 0-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class [ by yr ]</trait>
+            <traitCombinations>0 0 0 0 0 1 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Temporary Age Class Marker</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>1</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+        </accumulateEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Record Number of Adult 3 [ per reach ]</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Record Number of Adult 3 [ per reach ] )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Number of Adult 3 [ bass per reach ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>h1</expression>
+            <streamPropName>Bass:accumulator:Temporary Age Class Marker</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Mark Adults [ 4 ]</name>
+          <description />
+          <qualifiedName>Accumulate ( Mark Adults [ 4 ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Temporary Age Class Marker</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <!--Stratified Updater Functions Group 0-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class [ by yr ]</trait>
+            <traitCombinations>0 0 0 0 0 0 1 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Temporary Age Class Marker</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>1</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+        </accumulateEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Record Number of Adult 4 [ per reach ]</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Record Number of Adult 4 [ per reach ] )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Number of Adult 4 [ bass per reach ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>h1</expression>
+            <streamPropName>Bass:accumulator:Temporary Age Class Marker</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Mark Adults [ 5+ ]</name>
+          <description />
+          <qualifiedName>Accumulate ( Mark Adults [ 5+ ] )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Bass</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Temporary Age Class Marker</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <!--Stratified Updater Functions Group 0-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class [ by yr ]</trait>
+            <traitCombinations>0 0 0 0 0 0 0 1 1</traitCombinations>
+            <updaterFunction>
+              <accumulator>Temporary Age Class Marker</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>1</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+        </accumulateEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Record Number of Adult 5+ [ per reach ]</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Record Number of Adult 5+ [ per reach ] )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Number of Adult 5+ [ bass per reach ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>h1</expression>
+            <streamPropName>Bass:accumulator:Temporary Age Class Marker</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Managers Get Abundance by Age Class</name>
+          <description />
+          <qualifiedName>Accumulate ( Managers Get Abundance by Age Class )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Segment Manager</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Number YoY Bass</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Number of YoY [ bass per reach ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Number Juvenile Bass</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Number of Juveniles [ bass per reach ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Number Adult 3 Bass</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Number of Adult 3 [ bass per reach ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Number Adult 4 Bass</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Number of Adult 4 [ bass per reach ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Number Adult Older Bass</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Number of Adult 5+ [ bass per reach ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <dataProbeEvent>
+          <name>Bass Abundance By Age Class [ per reach ]</name>
+          <description />
+          <qualifiedName>Data Probe ( Bass Abundance By Age Class [ per reach ] )</qualifiedName>
+          <displayColor>-8323200</displayColor>
+          <populationName>Segment Manager</populationName>
+          <permanent>false</permanent>
+          <trait>Dummy</trait>
+          <traitCombinations>1 1</traitCombinations>
+          <accumulator>Reach ID</accumulator>
+          <accumulator>Occupants [ bass ]</accumulator>
+          <accumulator>Number YoY Bass</accumulator>
+          <accumulator>Number Juvenile Bass</accumulator>
+          <accumulator>Number Adult 3 Bass</accumulator>
+          <accumulator>Number Adult 4 Bass</accumulator>
+          <accumulator>Number Adult Older Bass</accumulator>
+        </dataProbeEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event eventOff="True" initialTimestep="1" period="12">
+    <eventGroupEvent>
+      <name>Write Annual Segment Output [ crayfish ]</name>
+      <description />
+      <qualifiedName>Event Group ( Write Annual Segment Output [ crayfish ] )</qualifiedName>
+      <displayColor>-5187329</displayColor>
+      <populationName />
+      <permanent>false</permanent>
+      <iterations>1</iterations>
+      <event>
+        <accumulateEvent>
+          <name>Mark Juveniles</name>
+          <description />
+          <qualifiedName>Accumulate ( Mark Juveniles )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Temporary Age Class Marker</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <!--Stratified Updater Functions Group 0-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class</trait>
+            <traitCombinations>1 0 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Temporary Age Class Marker</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>1</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+        </accumulateEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Record Number of Juveniles [ per reach ]</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Record Number of Juveniles [ per reach ] )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Number of Juvenile [ cray per reach ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>h1</expression>
+            <streamPropName>Crayfish:accumulator:Temporary Age Class Marker</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Mark Age 1 Individuals</name>
+          <description />
+          <qualifiedName>Accumulate ( Mark Age 1 Individuals )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Temporary Age Class Marker</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <!--Stratified Updater Functions Group 0-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class</trait>
+            <traitCombinations>0 1 0 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Temporary Age Class Marker</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>1</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+        </accumulateEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Record Number of Age 1 Individuals [ per reach ]</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Record Number of Age 1 Individuals [ per reach ] )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Number of Age 1 Crayfish [ per reach ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>h1</expression>
+            <streamPropName>Crayfish:accumulator:Temporary Age Class Marker</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Mark Age 2 Individuals</name>
+          <description />
+          <qualifiedName>Accumulate ( Mark Age 2 Individuals )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Temporary Age Class Marker</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <!--Stratified Updater Functions Group 0-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class</trait>
+            <traitCombinations>0 0 1 0</traitCombinations>
+            <updaterFunction>
+              <accumulator>Temporary Age Class Marker</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>1</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+        </accumulateEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Record Number of Age 2 Individuals [ per reach ]</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Record Number of Age 2 Individuals [ per reach ] )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Number of Age 2 Crayfish [ per reach ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>h1</expression>
+            <streamPropName>Crayfish:accumulator:Temporary Age Class Marker</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Mark Age 3 Individuals</name>
+          <description />
+          <qualifiedName>Accumulate ( Mark Age 3 Individuals )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Crayfish</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Temporary Age Class Marker</accumulator>
+            <function>HexSimDomain.ClearUpdaterFunction</function>
+          </updaterFunction>
+          <!--Stratified Updater Functions Group 0-->
+          <stratifiedUpdaterFunctions>
+            <trait>Age Class</trait>
+            <traitCombinations>0 0 0 1</traitCombinations>
+            <updaterFunction>
+              <accumulator>Temporary Age Class Marker</accumulator>
+              <function>HexSimDomain.ExpressionUpdaterFunction</function>
+              <parameter>1</parameter>
+              <parameter>0</parameter>
+            </updaterFunction>
+          </stratifiedUpdaterFunctions>
+        </accumulateEvent>
+      </event>
+      <event>
+        <persistStreamPropertyEvent>
+          <name>Record Number of Age 3 Individuals [ per reach ]</name>
+          <description />
+          <qualifiedName>Network Generated Property ( Record Number of Age 3 Individuals [ per reach ] )</qualifiedName>
+          <populationName />
+          <permanent>false</permanent>
+          <streamPropertyName>Number of Age 3 Crayfish [ per reach ]</streamPropertyName>
+          <rangeProperty>false</rangeProperty>
+          <persistStreamPropertyGenerator>
+            <expression>h1</expression>
+            <streamPropName>Crayfish:accumulator:Temporary Age Class Marker</streamPropName>
+          </persistStreamPropertyGenerator>
+          <saveFrequency>1</saveFrequency>
+        </persistStreamPropertyEvent>
+      </event>
+      <event>
+        <accumulateEvent>
+          <name>Managers Get Abundance by Age Class</name>
+          <description />
+          <qualifiedName>Accumulate ( Managers Get Abundance by Age Class )</qualifiedName>
+          <displayColor>-1</displayColor>
+          <populationName>Segment Manager</populationName>
+          <permanent>false</permanent>
+          <!--Global Updater Functions-->
+          <updaterFunction>
+            <accumulator>Number Juvenile Crayfish</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Number of Juvenile [ cray per reach ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Number Age 1 Crayfish</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Number of Age 1 Crayfish [ per reach ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Number Age 2 Crayfish</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Number of Age 2 Crayfish [ per reach ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+          <updaterFunction>
+            <accumulator>Number Age 3 Crayfish</accumulator>
+            <function>HexSimDomain.SavePropertyUpdaterFunction</function>
+            <parameter>Number of Age 3 Crayfish [ per reach ]</parameter>
+            <accumulateSpatialData>johndayriver</accumulateSpatialData>
+          </updaterFunction>
+        </accumulateEvent>
+      </event>
+      <event>
+        <dataProbeEvent>
+          <name>Crayfish Abundance By Age Class [ per reach ]</name>
+          <description />
+          <qualifiedName>Data Probe ( Crayfish Abundance By Age Class [ per reach ] )</qualifiedName>
+          <displayColor>-4268806</displayColor>
+          <populationName>Segment Manager</populationName>
+          <permanent>false</permanent>
+          <trait>Dummy</trait>
+          <traitCombinations>1 1</traitCombinations>
+          <accumulator>Reach ID</accumulator>
+          <accumulator>Number Juvenile Crayfish</accumulator>
+          <accumulator>Number Age 1 Crayfish</accumulator>
+          <accumulator>Number Age 2 Crayfish</accumulator>
+          <accumulator>Number Age 3 Crayfish</accumulator>
+          <accumulator>Occupants [ cray ]</accumulator>
+        </dataProbeEvent>
+      </event>
+    </eventGroupEvent>
+  </event>
+  <event eventOff="True">
+    <transitionEvent>
+      <name>Update Species Overlap</name>
+      <description />
+      <qualifiedName>Transition ( Update Species Overlap )</qualifiedName>
+      <displayColor>-2763265</displayColor>
+      <populationName>Segment Manager</populationName>
+      <permanent>false</permanent>
+      <transitionTrait>Species Presence</transitionTrait>
+      <trait>Bass Presence</trait>
+      <trait>Crayfish Presence</trait>
+      <matrixSet transposed="false" rowsReversed="false">
+        <matrixCount>1</matrixCount>
+        <rows>4</rows>
+        <columns>4</columns>
+        <matrices>
+1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1
+</matrices>
+      </matrixSet>
+    </transitionEvent>
+  </event>
+  <event eventOff="True">
+    <censusEvent>
+      <name>12 - Record Species Overlap</name>
+      <description />
+      <qualifiedName>Census ( 12 - Record Species Overlap )</qualifiedName>
+      <populationName>Segment Manager</populationName>
+      <permanent>false</permanent>
+      <logParams logCensus="true" logCensusGenomes="false" />
+      <trait>Species Presence</trait>
+    </censusEvent>
+  </event>
+  <simulationParameters>
+    <timesteps>500</timesteps>
+    <startLogStep>1</startLogStep>
+    <maxMatrices>1</maxMatrices>
+    <matrixStochasticity>random</matrixStochasticity>
+    <simulationLog>true</simulationLog>
+  </simulationParameters>
+  <workspace>D:\cvaage\Workspace\Workspace</workspace>
+  <hexagonGrid>
+    <filename>D:\cvaage\Workspace\Workspace\JohnDayRiver_Finale.grid</filename>
+    <hexCount>4396539</hexCount>
+    <rows>2333</rows>
+    <columns>1885</columns>
+    <narrow>true</narrow>
+    <hexagonWidth>100</hexagonWidth>
+    <north>202072.59421636903</north>
+    <west>0</west>
+  </hexagonGrid>
+  <spatialDataSeries>
+    <name>johndayriver</name>
+    <datatype>StreamNetwork</datatype>
+    <timeSeries>BassT CrayT GDD MeanT</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Bass [ extreme consumers ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Bass [ heavy consumers ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Bass [ light consumers ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Bass [ moderate consumers ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Density [ adult bass ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Density [ adult cray ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Density [ predatory cray ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Downstream Factor [ bass ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Downstream Factor [ cray ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Monthly Total Crayfish Prey [ per reach ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Number of Adult 3 [ bass per reach ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Number of Adult 4 [ bass per reach ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Number of Adult 5+ [ bass per reach ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Number of Age 1 Crayfish [ per reach ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Number of Age 2 Crayfish [ per reach ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Number of Age 3 Crayfish [ per reach ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Number of Juvenile [ cray per reach ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Number of Juveniles [ bass per reach ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Number of YoY [ bass per reach ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Upstream Factor [ bass ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <spatialDataSeries>
+    <name>Upstream Factor [ cray ]</name>
+    <datatype>PersistedStreamData</datatype>
+    <timeSeries>1</timeSeries>
+    <ignoredTimeSteps />
+    <cycleLength>0</cycleLength>
+  </spatialDataSeries>
+  <globalVariables>
+    <globalVariable Name="Max Age Months [ crayfish ]" Value="48" />
+    <globalVariable Name="Max Age Months [ bass ]" Value="84" />
+    <globalVariable Name="Number Cray Prey [ light consumers ]" Value="10" />
+    <globalVariable Name="Number Cray Prey [ moderate consumers ]" Value="30" />
+    <globalVariable Name="Number Cray Prey [ heavy consumers ]" Value="50" />
+    <globalVariable Name="Number Cray Prey [ extreme consumers ]" Value="80" />
+  </globalVariables>
+</scenario>
