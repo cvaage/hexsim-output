@@ -55,13 +55,14 @@ data/
 STEP III: Run scripts to produce plots.
 
 scripts-results/4_figures/
-* 4.1-occupancy-spatial-smb.R – 
-* 4.2-occupancy-trendline-smb.R –
-* 4.3-occupancy-spatial-rc.R –
-* 4.4-occupancy-trendline-rc.R –
-* 4.5-occupancy-spatial-both.R –
-* 4.6-abundance-smb.R –
-* 4.7-abundance-rc.R –
+* 4.1-occupancy-spatial-smb
+* 4.2-occupancy-trendline-smb
+* 4.3-occupancy-spatial-rc
+* 4.4-occupancy-trendline-rc
+* 4.5-occupancy-spatial-both
+* 4.6-abundance-smb
+* 4.7-abundance-rc
+* 4.8-abundance-both
 
 --------------------------------------------------------------------------------
 
